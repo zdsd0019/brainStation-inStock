@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './SingleWarehouse.scss';
-import WarehouseList from '../WarehouseList/WarehouseList';
 
 class SingleWarehouse extends Component {
     render() {
