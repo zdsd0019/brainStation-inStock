@@ -1,0 +1,122 @@
+@import 'variables';
+@import 'fonts';
+@import 'colors';
+
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: $laptop-breakpoint) {
+        @content;
+    }    
+}
+
+@mixin width-and-height ($width, $height) { 
+    width: $width;
+    height: $height;
+}
+
+@mixin padding-left-and-top ($left, $top) {
+    padding-left: $left;
+    padding-top: $top;
+}
+
+@mixin margin-bottom-right($bottom, $right) {
+    margin-bottom: $bottom;
+    margin-right: $right;    
+}
+
+//following are mixins for mobile
+
+@mixin mobile-header1{
+    font-family: Avenir-Bold;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+@mixin mobile-header2-sub-header {
+    font-family: Avenir-Bold;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+}
+
+@mixin mobile-header4-paragraph {
+    font-family: Avenir-Regular;
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+}
+
+@mixin mobile-header4-list-and-contact-information {
+    font-family: Avenir-Demiit;
+    font-size: 0.813rem;
+    line-height: 1.125rem;
+}
+
+@mixin mobile-header5-labels {
+    font-family: Avenir-Light;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+}
+
+//following are mixins for desktop and tablet fonts
+@mixin desk-and-tablet-hero-header1 {
+    font-family: Avenir-Bold;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+}
+
+@mixin desk-and-tablet-header1 {
+    font-family: Avenir-Bold;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+}
+
+@mixin desk-and-tablet-header2-sub-header {
+    font-family: Avenir-Demi;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+@mixin desk-and-tablet-header3-sub-header {
+    font-family: Avenir-Regular;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+@mixin desk-and-tablet-header4-paragraph-and-comments {
+    font-family: Avenir-Regular;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+}
+
+@mixin desk-and-tablet-header4-list-and-contact-information {
+    font-family: Avenir-Regular;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+@mixin desk-and-tablet-header5-labels {
+    font-family: Avenir-Thin;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+}
+
+// Button
+@mixin bluebutton {
+    background-color: $brainflix-blue;
+    color: $white;
+    border-radius: 0.25rem;
+    border: 1px solid $brainflix-blue;
+  }
+
+  //Avatar
+  @mixin  avatar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 75%;
+  }
+
