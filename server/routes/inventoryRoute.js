@@ -20,7 +20,7 @@ router.post("/inventory", (req, res) => {
   }
 
   if (!onlyLetters(req.body.name) || !onlyLetters(req.body.city)) {
-    res.status(400).send("enter a vald input field");
+    res.status(400).send("enter a valid input field");
   }
 
   //check quantity input is a number
