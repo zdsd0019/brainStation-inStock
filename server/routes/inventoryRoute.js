@@ -53,6 +53,7 @@ router.post("/inventory", (req, res) => {
     city: req.body.city,
     country: req.body.country,
     isInstock: req.body.status,
+    warehouseId: "W" + uuid(),
   };
 
   inventory.push(newInventoryItem);
