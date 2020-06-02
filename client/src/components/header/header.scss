@@ -22,6 +22,10 @@
             align-items: center;
             padding-left: 1.5rem;
         }
+
+        @include laptop {
+            padding-left: 11.25rem;
+        }
     }
 
     &-logo {
@@ -65,6 +69,10 @@
         @include tablet {
             margin-left: 2rem;
         }
+
+        @include laptop {
+            margin-left: 3.5rem;
+        }
     }
 
     &-locations {
@@ -98,6 +106,10 @@
 
         @include tablet {
             margin-left: 2rem;
+        }
+
+        @include laptop {
+            margin-left: 3.5rem;
         }
     }
 
