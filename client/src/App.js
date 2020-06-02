@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
 import WarehouseList from './components/WarehouseList/WarehouseList';
 // import inventory from '';
+import Header from './components/header/header';
 
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
     return (
      <>
      <Router>
+      <Header />
       <Switch>
         <Route path='/' exact component={ WarehouseList } /> {/* redirects to warehouse */}
         <Route path="/warehouses" component={ WarehouseList } /> {/* All warehouse List
