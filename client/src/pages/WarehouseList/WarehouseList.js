@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './WarehouseList.scss';
 import axios from 'axios';
-import SingleWarehouse from '../SingleWarehouse/SingleWarehouse';
+import SingleWarehouse from '../../components/SingleWarehouse/SingleWarehouse';
 
 // temporary variable - we can create .env after
 const API_URL = "http://localhost:8080/";
