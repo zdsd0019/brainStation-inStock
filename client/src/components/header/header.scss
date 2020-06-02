@@ -24,9 +24,6 @@
 
 .btn {
     display: flex;
-    // justify-content: space-around;
-    // padding-left: 1rem;
-    // padding-right: 1rem;
 
     &-inventory {
         width: 50%;
@@ -88,11 +85,11 @@
         }
     }
 
-    &-active{
-        color: $white;
-        padding-bottom: 0.6rem;    
-        width: 50%;            
-        border-bottom: 4px solid $white;
-    }
+    // &-active{
+    //     color: $white;
+    //     padding-bottom: 0.6rem;    
+    //     width: 50%;            
+    //     border-bottom: 1px solid $white;
+    // }
 }
 
