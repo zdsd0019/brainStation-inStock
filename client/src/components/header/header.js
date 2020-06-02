@@ -13,8 +13,8 @@ function Header() {
 				</Link>
             </span>
             <nav className='btn' >
-            <input type='button' value='Inventory' className='btn-inventory btn-active' />
-            <input type='button' value='Locations' className='btn-locations' />
+            <Link to='/inventory' className='btn-inventory'>Inventory</Link>
+            <Link to='/warehouses' className='btn-locations'>Locations</Link>
             </nav>
 		</span>
 	);

@@ -10,6 +10,7 @@ class App extends Component {
     return (
      <>
      <Router>
+      <Header />
       <Switch>
         <Route path='/' exact component={ WarehouseList } /> {/* redirects to warehouse */}
         <Route path="/warehouses" component={ WarehouseList } /> {/* All warehouse List

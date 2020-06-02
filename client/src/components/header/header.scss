@@ -24,17 +24,20 @@
 
 .btn {
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
     // padding-left: 1rem;
     // padding-right: 1rem;
 
     &-inventory {
         width: 50%;
+        margin: 0;
         background-color: $black;
+        text-align: center;
         color: $white;
         border: none;
         outline: none;
         padding-bottom: 1rem;
+        text-decoration: none; 
 
         &:hover {
             border: none;
@@ -56,12 +59,15 @@
     }
 
     &-locations {
+        margin: 0;
         width: 50%;
         background-color: $black;
+        text-align: center;
         color: $white;
         border: none;
         outline: none;
         padding-bottom: 1rem;
+        text-decoration: none; 
 
         &:hover {
             border: none;
@@ -81,4 +87,12 @@
             
         }
     }
+
+    &-active{
+        color: $white;
+        padding-bottom: 0.6rem;    
+        width: 50%;            
+        border-bottom: 4px solid $white;
+    }
 }
+
