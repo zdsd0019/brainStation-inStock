@@ -41,6 +41,7 @@ class Inventory extends Component {
           ></input>
         </div>
         <InventoryList inventoryList={this.state.inventoryList} />
+        <button className="inventory__add-button">+</button>
       </div>
     );
   }
