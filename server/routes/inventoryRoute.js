@@ -11,7 +11,7 @@ router.get("/inventory", (req, res) => {
 
 //Route to get selected inventory item
 router.get('/inventory/:id', (req, res) => {
-  const invId = res.params.id;
+  const invId = req.params.id;
 	const selectedInventory = inventory.find(inv => {
 		return inv.id === invId;
   });
