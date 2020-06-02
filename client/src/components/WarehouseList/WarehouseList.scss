@@ -1,3 +1,75 @@
+@import '../../styles/partials/mixins';
+
 .warehouseList {
-    margin: 20px 10px;
+    margin: 20px;
+    flex-direction: column;
+
+    @include tablet {
+        margin: 20px 24px;
+    }
+
+    @include laptop {
+        margin: 20px 140px;
+    }
+
+    &__header {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+    }
+
+    &__title {
+        @include mobile-header1;
+        margin-bottom: 16px;
+
+        @include laptop {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__search {
+        height: 40px;
+        border: 1px solid $mercury;
+        border-radius: 5px;
+        padding: 5px 8px 5px 35px;
+        width: 200px;
+        background: $alabaster url(../../assets/Icons/SVG/Icon-search.svg) no-repeat scroll 10px 10px;
+
+        @include laptop {
+            font-size: 1rem;
+            width: 250px;
+        }
+    }
+
+    &__tableHeader {
+        display: none;
+
+        @include laptop {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        @include desk-and-tablet-header4-list-and-contact-information;
+        
+        font-family: Avenir-Bold;
+        color: $silver;
+
+        &-warehouse {
+            width: 25%;
+        }
+
+        &-contact {
+            width: 25%;
+        }
+
+        &-contactInfo {
+            width: 25%;
+        }
+
+        &-categories {
+            width: 25%;
+        }
+    }
 }

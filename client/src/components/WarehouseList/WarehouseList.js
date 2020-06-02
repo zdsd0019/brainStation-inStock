@@ -3,6 +3,8 @@ import './WarehouseList.scss';
 import SingleWarehouse from '../SingleWarehouse/SingleWarehouse';
 
 class WarehouseList extends Component {
+
+    /* Temporarily hardcoded - this will be replaced by backend API */
     state = {
         warehouses: [
             {
@@ -58,10 +60,18 @@ class WarehouseList extends Component {
             <>
                 {/* <NavigationBar /> */}
                 <div className="warehouseList">
+                  <div className="warehouseList__header">
                     <h1 className="warehouseList__title">Locations</h1>
-                    <form className="warehouseList__form">
-                        <input type="search" placeholder="Search"></input>
-                    </form>
+                      <form className="warehouseList__form">
+                          <input className="warehouseList__search" type="search" placeholder="Search"></input>
+                      </form>
+                  </div>
+                  <div className="warehouseList__tableHeader">
+                    <p className="warehouseList__tableHeader-warehouse">WAREHOUSE</p>
+                    <p className="warehouseList__tableHeader-contact">CONTACT</p>
+                    <p className="warehouseList__tableHeader-contactInfo">CONTACT INFORMATION</p>
+                    <p className="warehouseList__tableHeader-categories">CATEGORIES</p>
+                  </div>
                     { this.state.warehouses.map(warehouse => {
                         return (
                             <SingleWarehouse key={warehouse.id} name={warehouse.name} address={warehouse.address} contact={warehouse.contact} inventoryCategories={warehouse.inventoryCategories} />
