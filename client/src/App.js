@@ -3,11 +3,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
 import Inventory from "./pages/Inventory/Inventory";
 
+import Header from "./components/header/header";
+
 class App extends Component {
   render() {
     return (
       <>
         <Router>
+          <Header />
           <Switch>
             <Route path="/" exact component={Inventory} />{" "}
             {/* redirects to warehouse */}
@@ -22,5 +25,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
