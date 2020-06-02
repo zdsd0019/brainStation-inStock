@@ -9,6 +9,20 @@ router.get("/inventory", (req, res) => {
   res.status(200).json(inventory);
 });
 
+//Route to get selected inventory item
+router.get('/inventory:id', (req, res) => {
+  const invId = res.params.id;
+	const selectedInventory = inventory.find(inv => {
+		return inv.id === invId;
+  });
+  if(!selectedInventory)
+    {
+        res.status(404).json({error: 'Product does not exist!!!'});
+    } else {
+    res.json(selectedInventory);
+  }
+})
+
 //Route to post new inventory item
 router.post("/inventory", (req, res) => {
   //check for empty input
