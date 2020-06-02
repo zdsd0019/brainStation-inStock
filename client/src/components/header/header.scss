@@ -14,6 +14,14 @@
         flex-direction: column;
         justify-content: center;
         padding-top: 1rem;
+
+        @include tablet {
+            height: 5rem;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 1.5rem;
+        }
     }
 
     &-logo {
@@ -53,6 +61,10 @@
             border-bottom: 0.25rem solid $white;
             
         }
+
+        @include tablet {
+            margin-left: 2rem;
+        }
     }
 
     &-locations {
@@ -82,6 +94,10 @@
             border: none;
             border-bottom: 0.25rem solid $white;
             
+        }
+
+        @include tablet {
+            margin-left: 2rem;
         }
     }
 
