@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const uuid = require("uuid/v4");
+const { v4: uuidv4 } = require('uuid');
 const inventory = require("../instock-data/inventory.json");
 const moment = require("moment");
 
@@ -45,7 +45,7 @@ router.post("/inventory", (req, res) => {
   date = date.format("MM/DD/YYYY");
 
   let newInventoryItem = {
-    id: uuid(),
+    id: uuidv4(),
     name: req.body.name,
     description: req.body.description,
     quantity: req.body.quantity,
@@ -53,7 +53,7 @@ router.post("/inventory", (req, res) => {
     city: req.body.city,
     country: req.body.country,
     isInstock: req.body.status,
-    warehouseId: "W" + uuid(),
+    warehouseId: "W" + uuidv4(),
   };
 
   inventory.push(newInventoryItem);
