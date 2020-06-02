@@ -1,7 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const uuid = require("uuid/v4");
+const inventory = require("../instock-data/inventory.json");
+const moment = require("moment");
 
+//Route to get all inventory items
+router.get("/inventory", (req, res) => {
+  res.status(200).json(inventory);
+});
+
+//Route to post new inventory item
 router.post("/inventory", (req, res) => {
   //check for empty input
   if (req.body.name === "" || req.body.city === "" || req.body.country === "") {
@@ -19,7 +27,7 @@ router.post("/inventory", (req, res) => {
     return true;
   }
 
-  if (!onlyLetters(req.body.name) || !onlyLetters(req.body.city)) {
+  if (!onlyLetters(req.body.city)) {
     res.status(400).send("enter a valid input field");
   }
 
@@ -31,16 +39,24 @@ router.post("/inventory", (req, res) => {
     res.status(400).send("enter a number value");
   }
 
+  let date = req.body.date;
+
+  date = moment(date);
+  date = date.format("MM/DD/YYYY");
+
   let newInventoryItem = {
-    id: uuid,
+    id: uuid(),
     name: req.body.name,
+    description: req.body.description,
+    quantity: req.body.quantity,
+    lastOrdered: date,
     city: req.body.city,
     country: req.body.country,
-    date: req.body.data,
-    quantity: req.body.quantity,
-    status: req.body.status,
-    description: req.body.description,
+    isInstock: req.body.status,
+    warehouseId: "W" + uuid(),
   };
+
+  inventory.push(newInventoryItem);
 
   res.status(201).json(newInventoryItem);
 });
