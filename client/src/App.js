@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route  } from 'react-router-dom';
-import WarehouseList from './components/WarehouseList/WarehouseList';
+import WarehouseList from './pages/WarehouseList/WarehouseList';
 // import inventory from '';
 import Header from './components/header/header';
 
