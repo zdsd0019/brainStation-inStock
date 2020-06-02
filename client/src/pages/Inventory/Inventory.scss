@@ -1,6 +1,23 @@
 @import "../../styles/partials/mixins";
+@import "../../styles/partials/fonts";
 
 .inventory {
   padding-left: 16px;
   padding-right: 16px;
+  padding-top: 10px;
+
+  &__header {
+    font-family: "Avenir-Bold";
+    font-size: 35px;
+  }
+
+  &__search {
+    height: 40px;
+    border: 1px solid $mercury;
+    border-radius: 5px;
+    padding: 5px 8px 5px 35px;
+    width: 250px;
+    background: $alabaster url(../../assets/Icons/SVG/Icon-search.svg) no-repeat
+      scroll 10px 10px;
+  }
 }
