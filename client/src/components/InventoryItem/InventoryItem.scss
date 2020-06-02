@@ -1,0 +1,35 @@
+@import "../../styles/partials/colors";
+
+.inventory {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $silver;
+  }
+
+  &__description-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header3-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__header3 {
+    color: $silver;
+    margin-bottom: 0px;
+  }
+
+  &__remove {
+    &--mobile {
+      margin-top: 20px;
+    }
+  }
+
+  &__product-name {
+    font-family: "Avenir-Bold";
+    margin-bottom: 0px;
+  }
+}

@@ -3,11 +3,13 @@ import "./InventoryList.scss";
 import InventoryItem from "../InventoryItem/InventoryItem";
 
 const InventoryList = (props) => {
-  // console.log("props", props);
-  // console.log(props.inventoryList);
-
   const { inventoryList } = props;
-  const createInventoryItem = inventoryList.map((item) => {
+  const createInventoryItem = inventoryList.map((item, index) => {
+    let first = "";
+    if (index === 0) {
+      first = "first";
+    }
+
     return (
       <InventoryItem
         key={item.id}
@@ -20,6 +22,7 @@ const InventoryList = (props) => {
         isInstock={item.isInstock}
         categories={item.categories}
         warehouseId={item.warehouseId}
+        first={first}
       />
     );
   });

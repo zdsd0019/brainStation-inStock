@@ -5,6 +5,8 @@
   padding-left: 16px;
   padding-right: 16px;
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
 
   &__header {
     font-family: "Avenir-Bold";
