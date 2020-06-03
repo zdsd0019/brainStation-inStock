@@ -41,12 +41,12 @@ class InventoryModal extends Component {
     };
 
     if (width >= 500) {
-      customStyles.content.width = "350px";
+      customStyles.content.width = "600px";
       customStyles.content.height = "500px";
     }
 
     if (width >= 1200) {
-      customStyles.content.width = "550px";
+      customStyles.content.width = "600px";
       customStyles.content.height = "600px";
     }
 
@@ -68,8 +68,8 @@ class InventoryModal extends Component {
                 <label className="modal__label">PRODUCT</label>
                 <input className="modal__input" placeholder="Item Name" />
                 <label className="modal__label">CITY</label>
-                <Select options={options} />
-                <label className="modal__label">QUANTITY</label>
+                <Select options={options} className="modal__select" />
+                <label className="modal__label">STATUS</label>
                 <p className="modal__toggle-text">
                   In Stock
                   <span>
@@ -83,9 +83,11 @@ class InventoryModal extends Component {
                 </p>
               </div>
             </div>
-            <label className="modal__label">
-              ITEM DESCRIPTION <textarea className="modal__textarea" />{" "}
-            </label>
+            <div className="modal__textarea-container">
+              <label className="modal__label">ITEM DESCRIPTION</label>
+              <textarea className="modal__textarea" placeholder="(OPTIONAL)" />
+            </div>
+
             <div className="modal__button-container">
               <button className="modal__button modal__button--save">
                 SAVE
