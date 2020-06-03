@@ -75,4 +75,15 @@ router.post("/inventory", (req, res) => {
   res.status(201).json(newInventoryItem);
 });
 
+const deleteSingleItem = ( req, res) => {
+  inventory.forEach((item, i) => {
+    if (item.id === req.params.id) {
+      inventory.splice(i, 1);
+      res.send('You have successfully deleted the item!!');
+    } else {
+      res.status(400).send('This request can not be completed, Please try again!!');
+    };
+  });
+};
+
 module.exports = router;
