@@ -20,18 +20,77 @@ const options = [
 class InventoryModal extends Component {
   state = {
     product: "",
-    lastOrdered: "",
+    // lastOrdered: "",
+    startDate: "",
     city: "",
-    country: "",
+    country: null,
     quantity: "",
     inStock: false,
     description: "",
   };
 
+  //handle change on name input field
+  handleNameChange = (event) => {
+    this.setState({
+      product: event.target.value,
+    });
+  };
+
+  //handle date change
+  handleChange = (date) => {
+    this.setState({
+      startDate: date,
+    });
+    // console.log(this.state.startDate);
+  };
+
+  //handle change on quantity input field
+  handleQuantityChange = (event) => {
+    this.setState({
+      quantity: event.target.value,
+    });
+    console.log(this.state.quantity);
+  };
+
+  //handle change on city input field
+  handleCityChange = (event) => {
+    this.setState({
+      city: event.target.value,
+    });
+    console.log(this.state.city);
+  };
+
+  //handle change on description input field
+  handleDescriptionChange = (event) => {
+    this.setState({
+      description: event.target.value,
+    });
+    console.log(this.state.description);
+  };
+
+  //handle toggle
+  handleToggle = (event) => {
+    if (this.state.inStock) {
+      this.setState({
+        inStock: false,
+      });
+    } else {
+      this.setState({
+        inStock: true,
+      });
+    }
+  };
+
+  //handle select input change
+  handleSelectInput = (country) => {
+    this.setState({
+      country,
+    });
+  };
+
   render() {
     const { width, modalIsOpen, closeModal } = this.props;
-
-    console.log(this.props);
+    console.log(this.state.country);
 
     const customStyles = {
       content: {
@@ -56,7 +115,7 @@ class InventoryModal extends Component {
     }
 
     return (
-      <Modal isOpen={true} style={customStyles}>
+      <Modal isOpen={modalIsOpen} style={customStyles}>
         <div className="modal">
           <h1 className="modal__header">Create New</h1>
           <form className="modal__form">
@@ -64,32 +123,62 @@ class InventoryModal extends Component {
               <div className="modal__column">
                 <div className="modal__input-container">
                   <label className="modal__label">PRODUCT</label>
-                  <input className="modal__input" placeholder="Item Name" />
+                  <input
+                    className="modal__input"
+                    placeholder="Item Name"
+                    type="text"
+                    name="name"
+                    value={this.state.product}
+                    onChange={this.handleNameChange}
+                  />
                 </div>
 
                 <div className="modal__input-container">
                   <label className="modal__label">LAST ORDERED</label>
-                  {/* <input className="modal__input" placeholder="Item Name" /> */}
-                  <DatePicker className="modal__date-picker" />
+                  <DatePicker
+                    className="modal__date-picker"
+                    selected={this.state.startDate}
+                    onChange={this.handleChange}
+                    placeholderText="Date"
+                  />
                 </div>
               </div>
 
               <div className="modal__column">
                 <div className="modal__input-container">
                   <label className="modal__label">CITY</label>
-                  <input className="modal__input" placeholder="City" />
+                  <input
+                    className="modal__input"
+                    placeholder="City"
+                    type="text"
+                    name="quantity"
+                    value={this.state.city}
+                    onChange={this.handleCityChange}
+                  />
                 </div>
 
                 <div className="modal__input-container">
                   <label className="modal__label">COUNTRY</label>
-                  <Select options={options} className="modal__select" />
+                  <Select
+                    options={options}
+                    className="modal__select"
+                    value={this.state.country}
+                    onChange={this.handleSelectInput}
+                  />
                 </div>
               </div>
 
               <div className="modal__column">
                 <div className="modal__input-container">
                   <label className="modal__label">QUANTITY</label>
-                  <input className="modal__input" placeholder="0" />
+                  <input
+                    className="modal__input"
+                    placeholder="0"
+                    type="text"
+                    name="quantity"
+                    value={this.state.quantity}
+                    onChange={this.handleQuantityChange}
+                  />
                 </div>
 
                 <div className="modal__input-container">
@@ -101,7 +190,7 @@ class InventoryModal extends Component {
                       defaultChecked={this.state.inStock}
                       className="modal__toggle"
                       icons={false}
-                      // onChange={this.handleCheeseChange}
+                      onChange={this.handleToggle}
                     />
                   </div>
                 </div>
@@ -109,7 +198,14 @@ class InventoryModal extends Component {
             </div>
             <div className="modal__textarea-container">
               <label className="modal__label">ITEM DESCRIPTION</label>
-              <textarea className="modal__textarea" placeholder="(OPTIONAL)" />
+              <textarea
+                className="modal__textarea"
+                placeholder="(OPTIONAL)"
+                type="text"
+                name="description"
+                value={this.state.description}
+                onChange={this.handleDescriptionChange}
+              />
             </div>
 
             <div className="modal__button-container">

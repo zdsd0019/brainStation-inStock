@@ -78,14 +78,15 @@
   }
 
   &__date-picker {
-    width: 288px;
+    width: 273px;
     height: 35px;
     border: 1px solid $mercury;
     border-radius: 4px;
     background-color: $alabaster;
+    padding-left: 15px;
 
     @include tablet {
-      width: 255px;
+      width: 240px;
     }
   }
 

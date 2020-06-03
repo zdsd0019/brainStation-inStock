@@ -59,7 +59,6 @@ class Inventory extends Component {
   };
 
   createNewInventory = () => {
-    console.log("i have been touched");
     this.setState({
       modalIsOpen: true,
     });
