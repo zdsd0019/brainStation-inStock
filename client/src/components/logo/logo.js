@@ -8,7 +8,7 @@ class Logo extends React.Component {
     render() {
       return (     
         <>
-        <img src={ HeaderLogo } alt="BrainFlix logo"></img>
+        <img src={ HeaderLogo } alt="Instock logo"></img>
         </>
       );
     }
