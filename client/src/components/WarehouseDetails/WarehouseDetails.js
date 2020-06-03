@@ -44,19 +44,21 @@ class WarehouseDetails extends Component {
                         </div>
                     </Link>
 
-                    <div className="warehouseDetails__address">
-                        <h3 className="warehouseDetails__address-title">ADDRESS</h3>
-                        <p className="warehouseDetails__address-address warehouseDetails__marginRemoved">{warehouseBackendInfo.address.street}</p>
-                        <p className="warehouseDetails__address-address warehouseDetails__marginRemoved">{warehouseBackendInfo.address.location}</p>
-                    </div>
+                    <div className="warehouseDetails__information">
+                        <div className="warehouseDetails__address">
+                            <h3 className="warehouseDetails__address-title">ADDRESS</h3>
+                            <p className="warehouseDetails__address-address">{warehouseBackendInfo.address.street}</p>
+                            <p className="warehouseDetails__address-address warehouseDetails__marginRemoved warehouseDetails__italic">{warehouseBackendInfo.address.location}</p>
+                        </div>
 
-                    <div className="warehouseDetails__contact">
-                        <h3 className="warehouseDetails__contact-title">CONTACT</h3>
-                        <p className="warehouseDetails__contact-name warehouseDetails__marginRemoved">{warehouseBackendInfo.contact.name}</p>
-                        <p className="warehouseDetails__contact-position warehouseDetails__marginRemoved">{warehouseBackendInfo.contact.position}</p>
+                        <div className="warehouseDetails__contact">
+                            <h3 className="warehouseDetails__contact-title">CONTACT</h3>
+                            <p className="warehouseDetails__contact-name warehouseDetails__marginRemoved">{warehouseBackendInfo.contact.name}</p>
+                            <p className="warehouseDetails__contact-position warehouseDetails__marginRemoved warehouseDetails__italic">{warehouseBackendInfo.contact.position}</p>
 
-                        <p className="warehouseDetails__contact-phone">{warehouseBackendInfo.contact.phone}</p>
-                        <p className="warehouseDetails__contact-email warehouseDetails__marginRemoved">{warehouseBackendInfo.contact.email}</p>
+                            <p className="warehouseDetails__contact-phone warehouseDetails__italic">{warehouseBackendInfo.contact.phone}</p>
+                            <p className="warehouseDetails__contact-email warehouseDetails__marginRemoved warehouseDetails__italic">{warehouseBackendInfo.contact.email}</p>
+                        </div>
                     </div>
                 </div>
 
