@@ -69,7 +69,8 @@ class InventoryModal extends Component {
 
                 <div className="modal__input-container">
                   <label className="modal__label">LAST ORDERED</label>
-                  <input className="modal__input" placeholder="Item Name" />
+                  {/* <input className="modal__input" placeholder="Item Name" /> */}
+                  <DatePicker className="modal__date-picker" />
                 </div>
               </div>
 
