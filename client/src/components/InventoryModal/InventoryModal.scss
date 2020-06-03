@@ -78,6 +78,7 @@
 
   &__toggle-container {
     display: flex;
+    justify-content: space-between;
   }
 
   &__toggle-text {
@@ -85,11 +86,12 @@
   }
 
   &__toggle {
-    margin-left: 170px;
-    margin-top: -30px;
+    // margin-left: 170px;
+    // margin-top: -30px;
+    margin-top: 15px;
 
     @include tablet {
-      margin-left: 150px;
+      // margin-left: 150px;
     }
   }
 

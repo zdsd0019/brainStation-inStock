@@ -5,6 +5,8 @@ import Select from "react-select";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
 
+//This is import or else the browser will scream at you
+
 Modal.setAppElement("#root");
 
 const options = [
@@ -72,17 +74,16 @@ class InventoryModal extends Component {
                 <label className="modal__label">CITY</label>
                 <Select options={options} className="modal__select" />
                 <label className="modal__label">STATUS</label>
-                {/* <p className="modal__toggle-text">
-                  In Stock
-                  <span>
-                    <Toggle
-                      id="inStock"
-                      defaultChecked={this.state.inStock}
-                      className="modal__toggle"
-                      // onChange={this.handleCheeseChange}
-                    />
-                  </span>
-                </p> */}
+                <div className="modal__toggle-container">
+                  <p className="modal__toggle-text">In Stock</p>
+                  <Toggle
+                    id="inStock"
+                    defaultChecked={this.state.inStock}
+                    className="modal__toggle"
+                    icons={false}
+                    // onChange={this.handleCheeseChange}
+                  />
+                </div>
               </div>
             </div>
             <div className="modal__textarea-container">

@@ -18,8 +18,6 @@ const customStyles = {
   },
 };
 
-//This is import or else the browser will scream at you
-
 class Inventory extends Component {
   constructor(props) {
     super(props);
