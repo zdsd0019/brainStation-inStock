@@ -1,6 +1,7 @@
 @import '../../styles/partials/mixins';
 
 .warehouseList {
+
     &__singleWarehouse {
         @include mobile-header5-labels;
 
@@ -116,5 +117,10 @@
             display: flex;
             justify-content: space-between;
         }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $black;
     }
 }
