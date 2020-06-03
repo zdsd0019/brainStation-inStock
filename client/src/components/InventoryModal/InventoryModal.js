@@ -4,9 +4,10 @@ import "./InventoryModal.scss";
 import Select from "react-select";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 //This is import or else the browser will scream at you
-
 Modal.setAppElement("#root");
 
 const options = [
@@ -55,34 +56,53 @@ class InventoryModal extends Component {
     }
 
     return (
-      <Modal isOpen={modalIsOpen} style={customStyles}>
+      <Modal isOpen={true} style={customStyles}>
         <div className="modal">
           <h1 className="modal__header">Create New</h1>
           <form className="modal__form">
-            <div className="modal__two-col-container">
-              <div className="modal__column-one">
-                <label className="modal__label">PRODUCT</label>
-                <input className="modal__input" placeholder="Item Name" />
-                <label className="modal__label">CITY</label>
-                <input className="modal__input" placeholder="City" />
-                <label className="modal__label">QUANTITY</label>
-                <input className="modal__input" placeholder="0" />
+            <div className="modal__three-col-container">
+              <div className="modal__column">
+                <div className="modal__input-container">
+                  <label className="modal__label">PRODUCT</label>
+                  <input className="modal__input" placeholder="Item Name" />
+                </div>
+
+                <div className="modal__input-container">
+                  <label className="modal__label">LAST ORDERED</label>
+                  <input className="modal__input" placeholder="Item Name" />
+                </div>
               </div>
-              <div className="modal__column-two">
-                <label className="modal__label">PRODUCT</label>
-                <input className="modal__input" placeholder="Item Name" />
-                <label className="modal__label">CITY</label>
-                <Select options={options} className="modal__select" />
-                <label className="modal__label">STATUS</label>
-                <div className="modal__toggle-container">
-                  <p className="modal__toggle-text">In Stock</p>
-                  <Toggle
-                    id="inStock"
-                    defaultChecked={this.state.inStock}
-                    className="modal__toggle"
-                    icons={false}
-                    // onChange={this.handleCheeseChange}
-                  />
+
+              <div className="modal__column">
+                <div className="modal__input-container">
+                  <label className="modal__label">CITY</label>
+                  <input className="modal__input" placeholder="City" />
+                </div>
+
+                <div className="modal__input-container">
+                  <label className="modal__label">COUNTRY</label>
+                  <Select options={options} className="modal__select" />
+                </div>
+              </div>
+
+              <div className="modal__column">
+                <div className="modal__input-container">
+                  <label className="modal__label">QUANTITY</label>
+                  <input className="modal__input" placeholder="0" />
+                </div>
+
+                <div className="modal__input-container">
+                  <label className="modal__label">STATUS</label>
+                  <div className="modal__toggle-container">
+                    <p className="modal__toggle-text">In Stock</p>
+                    <Toggle
+                      id="inStock"
+                      defaultChecked={this.state.inStock}
+                      className="modal__toggle"
+                      icons={false}
+                      // onChange={this.handleCheeseChange}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
