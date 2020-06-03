@@ -9,6 +9,14 @@
   display: flex;
   flex-direction: column;
 
+  @include tablet {
+    margin: 20px 24px;
+  }
+
+  @include laptop {
+    margin: 20px 140px;
+  }
+
   &__header-container {
     display: flex;
     flex-direction: column;
@@ -57,15 +65,7 @@
     }
 
     @include laptop {
-      right: 350px;
+      right: 300px;
     }
-  }
-
-  @include tablet {
-    margin: 20px 24px;
-  }
-
-  @include laptop {
-    margin: 20px 140px;
   }
 }

@@ -1,0 +1,177 @@
+@import "../../styles/partials/colors";
+@import "../../styles/partials/mixins";
+
+.modal {
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include laptop {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  &__header {
+    align-self: flex-start;
+    @include laptop {
+      margin-left: -20px;
+    }
+  }
+
+  @include tablet {
+    align-items: center;
+  }
+
+  &__three-col-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      // flex-direction: row;
+      // justify-content: space-between;
+      // width: 550px;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 550px;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    color: $silver;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    padding-left: 15px;
+    border: 1px solid $mercury;
+    height: 35px;
+    border-radius: 4px;
+    background-color: $alabaster;
+    width: 273px;
+
+    @include tablet {
+      width: 240px;
+    }
+  }
+
+  &__date-picker {
+    width: 273px;
+    height: 35px;
+    border: 1px solid $mercury;
+    border-radius: 4px;
+    background-color: $alabaster;
+    padding-left: 15px;
+
+    @include tablet {
+      width: 240px;
+    }
+  }
+
+  &__select {
+    @include tablet {
+      width: 260px;
+    }
+  }
+
+  &__toggle-container {
+    display: flex;
+    justify-content: space-between;
+    width: 288px;
+
+    @include tablet {
+      width: 260px;
+    }
+  }
+
+  &__toggle-text {
+    margin-left: 5px;
+  }
+
+  &__toggle {
+    // margin-left: 170px;
+    // margin-top: -30px;
+    margin-top: 15px;
+
+    @include tablet {
+      // margin-left: 150px;
+    }
+  }
+
+  &__textarea-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__textarea {
+    padding-left: 15px;
+    padding-top: 15px;
+    resize: none;
+    border: 1px solid $mercury;
+    height: 65px;
+    border-radius: 4px;
+    background-color: $alabaster;
+    width: 270px;
+    margin-top: 10px;
+    font-family: "Avenir";
+
+    @include tablet {
+      width: 530px;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    @include tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__button {
+    height: 48px;
+    outline: none;
+    border: none;
+    font-family: "Avenir-Bold";
+    font-size: 15px;
+    width: 288px;
+    @include tablet {
+      width: 160px;
+    }
+
+    &--save {
+      background-color: $instock-blue-dark;
+      color: $white;
+    }
+
+    &--cancel {
+      background-color: $white;
+      color: $instock-blue-dark;
+    }
+  }
+}
