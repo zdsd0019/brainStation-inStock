@@ -49,7 +49,7 @@ const InventoryItem = (props) => {
           <img
             src={remove}
             className="inventory__remove inventory__remove--mobile"
-            alt='click here to remove'
+            alt='click here to remove item'
           />
         </div>
         <div>
@@ -84,7 +84,7 @@ const InventoryItem = (props) => {
         <img
           src={remove}
           className={removeButtonClassName + " inventory__remove--tablet"}
-          alt='click here to remove'
+          alt='click here to remove item'
         />
       </div>
     </div>
