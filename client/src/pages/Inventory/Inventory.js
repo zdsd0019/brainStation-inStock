@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Inventory.scss";
 import axios from "axios";
 import InventoryList from "../../components/InventoryList/InventoryList";
-import Modal from "react-modal";
+import InventoryModal from "../../components/InventoryModal/InventoryModal";
 
 const API_URL = "http://localhost:8080/inventory";
 
@@ -10,9 +10,6 @@ const customStyles = {
   content: {
     top: "50%",
     left: "50%",
-    // right: "auto",
-    // bottom: "auto",
-    // marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     position: "absolute",
     width: "100vw",
@@ -22,7 +19,6 @@ const customStyles = {
 };
 
 //This is import or else the browser will scream at you
-Modal.setAppElement("#root");
 
 class Inventory extends Component {
   constructor(props) {
@@ -64,23 +60,20 @@ class Inventory extends Component {
       });
   };
 
+  createNewInventory = () => {
+    console.log("i have been touched");
+    this.setState({
+      modalIsOpen: true,
+    });
+  };
+
   render() {
-    console.log(this.state.width);
-    if (this.state.width >= 500) {
-      customStyles.content.width = "350px";
-      customStyles.content.height = "500px";
-    }
-
-    if (this.state.width >= 1200) {
-      customStyles.content.width = "550px";
-      customStyles.content.height = "600px";
-    }
-
     return (
       <div className="inventory">
-        <Modal isOpen={this.state.modalIsOpen} style={customStyles}>
-          <h1>Create New</h1>
-        </Modal>
+        <InventoryModal
+          width={this.state.width}
+          modalIsOpen={this.state.modalIsOpen}
+        />
         <div className="inventory__header-container">
           <h1 className="inventory__header">Inventory</h1>
           <input
@@ -90,7 +83,12 @@ class Inventory extends Component {
           ></input>
         </div>
         <InventoryList inventoryList={this.state.inventoryList} />
-        <button className="inventory__add-button">+</button>
+        <button
+          className="inventory__add-button"
+          onClick={this.createNewInventory}
+        >
+          +
+        </button>
       </div>
     );
   }
