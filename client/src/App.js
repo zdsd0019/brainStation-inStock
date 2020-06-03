@@ -11,9 +11,9 @@ class App extends Component {
         <Router>
           <Header />
           <Switch>
-            <Route path="/" exact component={Inventory} />{" "}
+            <Route path="/" exact component={Inventory} />
             {/* redirects to warehouse */}
-            <Route path="/warehouses" component={WarehouseList} />{" "}
+            <Route path="/warehouses" component={WarehouseList} />
             {/* All warehouse List
             {/* <Route path="/inventory" component = { inventory } /> {/* All Inventory List */}
             {/* <Route path='/warehouses/:id' component={ warehouses } />; {/* Warehouse details */}

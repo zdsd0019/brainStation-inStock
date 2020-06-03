@@ -28,8 +28,6 @@ class Inventory extends Component {
   };
 
   render() {
-    // console.log(this.state.inventoryList);
-
     return (
       <div className="inventory">
         <div className="inventory__header-container">
