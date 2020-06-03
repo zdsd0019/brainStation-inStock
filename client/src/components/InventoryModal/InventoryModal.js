@@ -88,6 +88,24 @@ class InventoryModal extends Component {
     });
   };
 
+  //handle form submission
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    this.handleFormSubmitValidation();
+  };
+
+  //handle for validation
+  handleFormSubmitValidation = () => {
+    if (
+      this.state.product === "" ||
+      this.state.startDate === "" ||
+      this.state.city === "" ||
+      this.state.country === null
+    ) {
+      alert("missing fields");
+    }
+  };
+
   render() {
     const { width, modalIsOpen, closeModal } = this.props;
     console.log(this.state.country);
@@ -118,7 +136,7 @@ class InventoryModal extends Component {
       <Modal isOpen={modalIsOpen} style={customStyles}>
         <div className="modal">
           <h1 className="modal__header">Create New</h1>
-          <form className="modal__form">
+          <form className="modal__form" onSubmit={this.handleFormSubmit}>
             <div className="modal__three-col-container">
               <div className="modal__column">
                 <div className="modal__input-container">
@@ -209,7 +227,10 @@ class InventoryModal extends Component {
             </div>
 
             <div className="modal__button-container">
-              <button className="modal__button modal__button--save">
+              <button
+                className="modal__button modal__button--save"
+                type="submit"
+              >
                 SAVE
               </button>
               <button
