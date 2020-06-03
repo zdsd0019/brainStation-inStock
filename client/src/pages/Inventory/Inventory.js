@@ -26,7 +26,6 @@ class Inventory extends Component {
       height: 0,
       inventoryList: [],
       modalIsOpen: false,
-      setModalIsOpen: false,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }

@@ -92,6 +92,7 @@ class InventoryModal extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     this.handleFormSubmitValidation();
+    //call prop from inventory.js
   };
 
   //handle for validation
@@ -108,7 +109,6 @@ class InventoryModal extends Component {
 
   render() {
     const { width, modalIsOpen, closeModal } = this.props;
-    console.log(this.state.country);
 
     const customStyles = {
       content: {
