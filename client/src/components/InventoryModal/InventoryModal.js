@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
 import "./InventoryModal.scss";
+import Select from "react-select";
+import Toggle from "react-toggle";
+import "react-toggle/style.css";
 
 Modal.setAppElement("#root");
+
+const options = [
+  { value: "canada", label: "Canada" },
+  { value: "united states", label: "United States" },
+  { value: "brazil", label: "Brazil" },
+  { value: "hong kong", label: "Hong Kong" },
+];
 
 class InventoryModal extends Component {
   state = {
@@ -58,20 +68,31 @@ class InventoryModal extends Component {
                 <label className="modal__label">PRODUCT</label>
                 <input className="modal__input" placeholder="Item Name" />
                 <label className="modal__label">CITY</label>
-                <select>
-                  <option value="0">Select car:</option>
-                  <option value="1">Audi</option>
-                  <option value="2">BMW</option>
-                  <option value="3">Citroen</option>
-                  <option value="4">Ford</option>
-                  <option value="5">Honda</option>
-                  <option value="6">Jaguar</option>
-                  <option value="7">Land Rover</option>
-                  <option value="8">Mercedes</option>
-                </select>
+                <Select options={options} />
                 <label className="modal__label">QUANTITY</label>
-                <input placeholder="0" />
+                <p className="modal__toggle-text">
+                  In Stock
+                  <span>
+                    <Toggle
+                      id="inStock"
+                      defaultChecked={this.state.inStock}
+                      className="modal__toggle"
+                      // onChange={this.handleCheeseChange}
+                    />
+                  </span>
+                </p>
               </div>
+            </div>
+            <label className="modal__label">
+              ITEM DESCRIPTION <textarea className="modal__textarea" />{" "}
+            </label>
+            <div className="modal__button-container">
+              <button className="modal__button modal__button--save">
+                SAVE
+              </button>
+              <button className="modal__button modal__button--cancel">
+                CANCEL
+              </button>
             </div>
           </form>
         </div>
