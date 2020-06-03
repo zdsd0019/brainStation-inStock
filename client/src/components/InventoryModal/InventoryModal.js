@@ -26,7 +26,9 @@ class InventoryModal extends Component {
   };
 
   render() {
-    const { width, modalIsOpen } = this.props;
+    const { width, modalIsOpen, closeModal } = this.props;
+
+    console.log(this.props);
 
     const customStyles = {
       content: {
@@ -51,7 +53,7 @@ class InventoryModal extends Component {
     }
 
     return (
-      <Modal isOpen={true} style={customStyles}>
+      <Modal isOpen={modalIsOpen} style={customStyles}>
         <div className="modal">
           <h1 className="modal__header">Create New</h1>
           <form className="modal__form">
@@ -70,7 +72,7 @@ class InventoryModal extends Component {
                 <label className="modal__label">CITY</label>
                 <Select options={options} className="modal__select" />
                 <label className="modal__label">STATUS</label>
-                <p className="modal__toggle-text">
+                {/* <p className="modal__toggle-text">
                   In Stock
                   <span>
                     <Toggle
@@ -80,7 +82,7 @@ class InventoryModal extends Component {
                       // onChange={this.handleCheeseChange}
                     />
                   </span>
-                </p>
+                </p> */}
               </div>
             </div>
             <div className="modal__textarea-container">
@@ -92,7 +94,10 @@ class InventoryModal extends Component {
               <button className="modal__button modal__button--save">
                 SAVE
               </button>
-              <button className="modal__button modal__button--cancel">
+              <button
+                className="modal__button modal__button--cancel"
+                onClick={(event) => closeModal(event)}
+              >
                 CANCEL
               </button>
             </div>

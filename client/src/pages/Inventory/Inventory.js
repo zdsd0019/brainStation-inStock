@@ -67,12 +67,20 @@ class Inventory extends Component {
     });
   };
 
+  closeModal = (event) => {
+    event.preventDefault();
+    this.setState({
+      modalIsOpen: false,
+    });
+  };
+
   render() {
     return (
       <div className="inventory">
         <InventoryModal
           width={this.state.width}
           modalIsOpen={this.state.modalIsOpen}
+          closeModal={this.closeModal}
         />
         <div className="inventory__header-container">
           <h1 className="inventory__header">Inventory</h1>
