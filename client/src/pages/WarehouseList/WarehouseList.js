@@ -47,7 +47,7 @@ class WarehouseList extends Component {
               </div>
                 { this.state.warehouses.map(warehouse => {
                     return (
-                        <SingleWarehouse key={warehouse.id} name={warehouse.name} address={warehouse.address} contact={warehouse.contact} inventoryCategories={warehouse.inventoryCategories} />
+                        <SingleWarehouse key={warehouse.id} id={warehouse.id} name={warehouse.name} address={warehouse.address} contact={warehouse.contact} inventoryCategories={warehouse.inventoryCategories} />
                     )
                 })}
             </div>

@@ -1,0 +1,60 @@
+@import '../../styles/partials/mixins';
+
+.warehouseDetails {
+
+    &__header {
+        display: flex;
+        align-items: center;
+        color: $black;
+        margin-top: 20px;
+
+        &-link {
+            text-decoration: none;
+        }
+
+        &-name {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        &-arrow {
+            margin-right: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__warehouse {
+        padding: 0 10px;
+    }
+
+    &__item {
+        background-color: $alabaster;
+        padding: 10px 10px;
+    }
+
+    &__address {
+
+        &-title {
+            color: $silver;
+            font-family: 'Avenir-Bold';
+        }
+    }
+
+    &__contact {
+
+        &-title {
+            color: $silver;
+            font-family: 'Avenir-Bold';
+        }
+
+        &-phone {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__marginRemoved {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
