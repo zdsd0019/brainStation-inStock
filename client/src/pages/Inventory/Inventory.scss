@@ -1,0 +1,71 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/fonts";
+@import "../../styles/partials/colors";
+
+.inventory {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &__header-container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__header {
+    font-family: "Avenir-Bold";
+    font-size: 35px;
+  }
+
+  &__search {
+    height: 40px;
+    border: 1px solid $mercury;
+    border-radius: 5px;
+    padding: 5px 8px 5px 35px;
+    width: 250px;
+    background: $alabaster url(../../assets/Icons/SVG/Icon-search.svg) no-repeat
+      scroll 10px 10px;
+  }
+
+  &__add-button {
+    display: flex;
+    align-items: center;
+    background-color: $instock-blue;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+
+    @include tablet {
+      right: 70px;
+    }
+
+    @include laptop {
+      right: 350px;
+    }
+  }
+
+  @include tablet {
+    margin: 20px 24px;
+  }
+
+  @include laptop {
+    margin: 20px 140px;
+  }
+}
