@@ -53,7 +53,25 @@ class Inventory extends Component {
         });
       })
       .catch((error) => {
-        console.log(error);
+        alert("enter a valid field");
+      });
+  };
+
+  postNewInventory = (event, newInventory) => {
+    event.preventDefault();
+
+    axios
+      .post(API_URL, newInventory)
+      .then((response) => {
+        if (response.status === 201) {
+          this.fetchInventory();
+          this.setState({
+            modalIsOpen: false,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("error", error);
       });
   };
 
@@ -71,12 +89,16 @@ class Inventory extends Component {
   };
 
   render() {
+    console.log(this.state.inventoryList);
+
     return (
       <div className="inventory">
         <InventoryModal
           width={this.state.width}
           modalIsOpen={this.state.modalIsOpen}
           closeModal={this.closeModal}
+          postNewInventory={this.postNewInventory}
+          validateForm={this.validateForm}
         />
         <div className="inventory__header-container">
           <h1 className="inventory__header">Inventory</h1>
