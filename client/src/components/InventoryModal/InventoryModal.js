@@ -91,9 +91,9 @@ class InventoryModal extends Component {
     let stockStatus = "";
 
     if (this.state.inStock) {
-      stockStatus = "In Stock";
-    } else {
       stockStatus = "Out of Stock";
+    } else {
+      stockStatus = "In Stock";
     }
 
     let newInventoryItem = {
@@ -103,10 +103,8 @@ class InventoryModal extends Component {
       lastOrdered: this.state.startDate,
       city: this.state.city,
       country: this.state.country.value,
-      isInstock: stockStatus,
+      isInstock: this.state.isInstock,
     };
-
-    console.log(newInventoryItem);
 
     this.handleFormSubmitValidation(newInventoryItem);
 
@@ -121,6 +119,8 @@ class InventoryModal extends Component {
         quantity: "",
         inStock: false,
         description: "",
+        formValidate: false,
+        isInstock: false,
       });
     }
   };
@@ -151,7 +151,6 @@ class InventoryModal extends Component {
 
   render() {
     const { width, modalIsOpen, closeModal } = this.props;
-    console.log(this.state.isInstock);
 
     const customStyles = {
       content: {
