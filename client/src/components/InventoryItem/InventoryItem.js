@@ -1,6 +1,7 @@
 import React from "react";
 import "./InventoryItem.scss";
 import remove from "../../assets/Icons/SVG/Icon-kebab-default.svg";
+import DropdownButton from "../DropdownButton/DropdownButton";
 
 const InventoryItem = (props) => {
   const {
@@ -46,11 +47,7 @@ const InventoryItem = (props) => {
       >
         <div className="inventory__header3-container">
           <h3 className={headerClassName}>ITEM</h3>
-          <img
-            src={remove}
-            className="inventory__remove inventory__remove--mobile"
-            alt='click here to remove item'
-          />
+          <DropdownButton removeButtonClassName={"inventory__remove inventory__remove--mobile"} />
         </div>
         <div>
           <p className="inventory__product-name">{name}</p>
@@ -81,11 +78,7 @@ const InventoryItem = (props) => {
       </div>
 
       <div className="inventory__tablet-button-container">
-        <img
-          src={remove}
-          className={removeButtonClassName + " inventory__remove--tablet"}
-          alt='click here to remove item'
-        />
+        <DropdownButton removeButtonClassName={removeButtonClassName + " inventory__remove--tablet"} />
       </div>
     </div>
   );
