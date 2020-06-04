@@ -90,7 +90,7 @@ class InventoryModal extends Component {
 
     let stockStatus = "";
 
-    if (this.state.inStock) {
+    if (this.state.isInstock) {
       stockStatus = "Out of Stock";
     } else {
       stockStatus = "In Stock";
@@ -127,6 +127,7 @@ class InventoryModal extends Component {
 
   //handle for validation
   handleFormSubmitValidation = (newInventoryItem) => {
+    //check that all input fields are not empty
     if (
       newInventoryItem.product === "" ||
       newInventoryItem.startDate === "" ||
@@ -136,6 +137,7 @@ class InventoryModal extends Component {
     ) {
       alert("missing fields");
     } else {
+      //check that the quantity field does not contain any letters
       if (
         typeof newInventoryItem.quantity != "boolean" &&
         !isNaN(newInventoryItem.quantity)
@@ -233,7 +235,7 @@ class InventoryModal extends Component {
                   <label className="modal__label">QUANTITY</label>
                   <input
                     className="modal__input"
-                    placeholder="0"
+                    placeholder="Quantity"
                     type="text"
                     name="quantity"
                     value={this.state.quantity}

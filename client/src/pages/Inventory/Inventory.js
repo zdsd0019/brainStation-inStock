@@ -73,7 +73,6 @@ class Inventory extends Component {
       .catch((error) => {
         console.log("error", error);
       });
-    // }
   };
 
   createNewInventory = () => {
