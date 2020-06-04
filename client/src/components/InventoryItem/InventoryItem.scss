@@ -57,21 +57,6 @@
   }
 
   &__remove {
-    &--mobile {
-      margin-top: 20px;
-      @include tablet {
-        display: none;
-      }
-    }
-
-    &--tablet {
-      display: none;
-      @include tablet {
-        display: inline;
-        padding-left: 10px;
-      }
-    }
-
     &--first {
       @include tablet {
         margin-top: 40px;

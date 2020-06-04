@@ -1,0 +1,53 @@
+@import '../../styles/partials/mixins';
+
+// !important was used to be able to change the library values
+
+.inventory {
+
+    &__remove {
+        &--mobile {
+            margin-top: 20px;
+            @include tablet {
+            display: none;
+            }
+        }
+    
+        &--tablet {
+            display: none;
+            @include tablet {
+                display: inline;
+                padding-left: 10px;
+            }
+        }
+    }
+    
+    &__dropdown {
+        cursor: pointer;
+
+        &-menu {
+            padding: 5px 5px;
+        }
+
+        &-menuItem {
+            width: 180px;
+            font-size: 1rem !important;
+            
+            @include laptop {
+                width: 130px;
+            }
+        }
+    }
+}
+
+.rc-dropdown {
+    font-family: Avenir-Medium !important;
+    box-shadow: none;
+    
+    &-menu-item {
+        background-color: $white !important;
+
+        &::after {
+            content: none !important;
+        }
+    }
+}
