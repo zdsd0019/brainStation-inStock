@@ -1,0 +1,130 @@
+@import '../../styles/partials/mixins';
+
+.warehouseDetails {
+
+    &__header {
+        display: flex;
+        align-items: center;
+        color: $black;
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        @include tablet {
+            margin-top: 0px;
+            margin-bottom: 20px;
+            padding: 40px 0;
+
+            border-bottom: 1px solid $mercury;
+        }
+
+        &-link {
+            text-decoration: none;
+        }
+
+        &-name {
+            margin-bottom: 0;
+            margin-top: 0;
+
+            @include tablet {
+                font-size: 2rem;
+            }
+        }
+
+        &-arrow {
+            margin-right: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__information {
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__warehouse {
+        padding: 0 16px;
+        margin-bottom: 40px;
+
+        @include laptop {
+            margin-bottom: 20px;
+        }
+
+        @include tablet {
+            padding: 0 24px;
+        }
+
+        @include laptop {
+            padding: 0 180px;
+        }
+    }
+
+    &__item {
+        background-color: $alabaster;
+        padding: 10px 16px;
+
+        @include tablet {
+            margin-top: 24px;
+            padding: 24px;
+        }
+
+        @include laptop {
+            padding: 30px 180px;
+        }
+    }
+
+    &__address {
+
+        @include tablet {
+            margin-right: 200px;
+        }
+
+        @include laptop {
+            margin-right: 260px;
+        }
+
+        &-title {
+            color: $silver;
+            font-family: 'Avenir-Bold';
+
+            @include tablet {
+                font-size: 0.875rem;
+            }
+        }
+
+        &-address {
+
+            @include tablet {
+                height: 50px;
+            }
+        }
+    }
+
+    &__contact {
+
+        &-title {
+            color: $silver;
+            font-family: 'Avenir-Bold';
+
+            @include tablet {
+                font-size: 0.875rem;
+            }
+        }
+
+        &-phone {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__marginRemoved {
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    &__italic {
+        @include tablet {
+            font-family: Avenir-It;
+        }
+    }
+}

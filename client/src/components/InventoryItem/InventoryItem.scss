@@ -5,7 +5,7 @@
   &__card {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid $silver;
+    border-bottom: 1px solid $mercury;
 
     @include tablet {
       flex-direction: row;
