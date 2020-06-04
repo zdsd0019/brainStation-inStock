@@ -81,6 +81,19 @@ class Inventory extends Component {
     });
   };
 
+  deleteInventoryItem = (id) => {
+    console.log(id);
+
+    axios
+        .delete(API_URL + "/" + id)
+        .then(result => {
+          this.fetchInventory();
+        })
+        .catch(err => {
+            console.log(err);
+        })
+  }
+
   closeModal = (event) => {
     event.preventDefault();
     this.setState({
@@ -108,7 +121,7 @@ class Inventory extends Component {
             placeholder="Search"
           ></input>
         </div>
-        <InventoryList inventoryList={this.state.inventoryList} />
+        <InventoryList inventoryList={this.state.inventoryList} deleteInventoryItem={this.deleteInventoryItem} />
         <button
           className="inventory__add-button"
           onClick={this.createNewInventory}
