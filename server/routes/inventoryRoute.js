@@ -57,6 +57,14 @@ router.post("/inventory", (req, res) => {
   date = moment(date);
   date = date.format("MM/DD/YYYY");
 
+  let stockStatus = "";
+
+  // if (isInstock) {
+  //   stockStatus = "In Stock"
+  // } else {
+  //   stockStatus
+  // }
+
   let newInventoryItem = {
     id: uuidv4(),
     name: req.body.name,
@@ -65,7 +73,7 @@ router.post("/inventory", (req, res) => {
     lastOrdered: date,
     city: req.body.city,
     country: req.body.country,
-    isInstock: req.body.status,
+    isInstock: req.body.isInstock,
     warehouseId: "W" + uuidv4(),
   };
 

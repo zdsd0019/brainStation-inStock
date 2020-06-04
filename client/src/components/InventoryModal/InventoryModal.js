@@ -20,13 +20,13 @@ const options = [
 class InventoryModal extends Component {
   state = {
     product: "",
-    // lastOrdered: "",
     startDate: "",
     city: "",
-    country: null,
+    country: "",
     quantity: "",
-    inStock: false,
+    isInstock: false,
     description: "",
+    formValidate: false,
   };
 
   //handle change on name input field
@@ -41,7 +41,6 @@ class InventoryModal extends Component {
     this.setState({
       startDate: date,
     });
-    // console.log(this.state.startDate);
   };
 
   //handle change on quantity input field
@@ -49,7 +48,6 @@ class InventoryModal extends Component {
     this.setState({
       quantity: event.target.value,
     });
-    console.log(this.state.quantity);
   };
 
   //handle change on city input field
@@ -57,7 +55,6 @@ class InventoryModal extends Component {
     this.setState({
       city: event.target.value,
     });
-    console.log(this.state.city);
   };
 
   //handle change on description input field
@@ -65,18 +62,17 @@ class InventoryModal extends Component {
     this.setState({
       description: event.target.value,
     });
-    console.log(this.state.description);
   };
 
   //handle toggle
   handleToggle = (event) => {
-    if (this.state.inStock) {
+    if (this.state.isInstock) {
       this.setState({
-        inStock: false,
+        isInstock: false,
       });
     } else {
       this.setState({
-        inStock: true,
+        isInstock: true,
       });
     }
   };
@@ -91,24 +87,71 @@ class InventoryModal extends Component {
   //handle form submission
   handleFormSubmit = (event) => {
     event.preventDefault();
-    this.handleFormSubmitValidation();
-    //call prop from inventory.js
+
+    let stockStatus = "";
+
+    if (this.state.inStock) {
+      stockStatus = "In Stock";
+    } else {
+      stockStatus = "Out of Stock";
+    }
+
+    let newInventoryItem = {
+      name: this.state.product,
+      description: this.state.description,
+      quantity: this.state.quantity,
+      lastOrdered: this.state.startDate,
+      city: this.state.city,
+      country: this.state.country.value,
+      isInstock: stockStatus,
+    };
+
+    console.log(newInventoryItem);
+
+    this.handleFormSubmitValidation(newInventoryItem);
+
+    if (this.state.formValidate) {
+      this.props.postNewInventory(event, newInventoryItem);
+
+      this.setState({
+        product: "",
+        startDate: "",
+        city: "",
+        country: "",
+        quantity: "",
+        inStock: false,
+        description: "",
+      });
+    }
   };
 
   //handle for validation
-  handleFormSubmitValidation = () => {
+  handleFormSubmitValidation = (newInventoryItem) => {
     if (
-      this.state.product === "" ||
-      this.state.startDate === "" ||
-      this.state.city === "" ||
-      this.state.country === null
+      newInventoryItem.product === "" ||
+      newInventoryItem.startDate === "" ||
+      newInventoryItem.city === "" ||
+      newInventoryItem.country === "" ||
+      newInventoryItem.quantity === ""
     ) {
       alert("missing fields");
+    } else {
+      if (
+        typeof newInventoryItem.quantity != "boolean" &&
+        !isNaN(newInventoryItem.quantity)
+      ) {
+        this.setState({
+          formValidate: true,
+        });
+      } else {
+        alert("enter a valid number");
+      }
     }
   };
 
   render() {
     const { width, modalIsOpen, closeModal } = this.props;
+    console.log(this.state.isInstock);
 
     const customStyles = {
       content: {
@@ -205,7 +248,7 @@ class InventoryModal extends Component {
                     <p className="modal__toggle-text">In Stock</p>
                     <Toggle
                       id="inStock"
-                      defaultChecked={this.state.inStock}
+                      defaultChecked={this.state.isInstock}
                       className="modal__toggle"
                       icons={false}
                       onChange={this.handleToggle}
