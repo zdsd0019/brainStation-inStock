@@ -45,6 +45,7 @@
     
     &-menu-item {
         background-color: $white !important;
+        cursor: pointer;
 
         &::after {
             content: none !important;

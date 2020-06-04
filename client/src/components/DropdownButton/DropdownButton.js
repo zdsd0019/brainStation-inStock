@@ -16,13 +16,11 @@ class DropdownButton extends Component {
         return (
             <div className="inventory__dropdown">
                 <Dropdown overlay={this.removeButton} trigger={["click"]} animation="slide-up" placement="bottomRight">
-                    <a href="" className="inventory__dropdown-removeButton">
-                        <img
-                            src={remove}
-                            className={this.props.removeButtonClassName}
-                            alt='click here to remove item'
-                        />
-                    </a>
+                    <img
+                        src={remove}
+                        className={this.props.removeButtonClassName}
+                        alt='click here to remove item'
+                    />
                 </Dropdown>
             </div>
         )  
