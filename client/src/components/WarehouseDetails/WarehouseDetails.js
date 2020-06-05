@@ -15,10 +15,9 @@ class WarehouseDetails extends Component {
             inventory: []
         }
     }
-    
-    componentDidMount() {
-        let warehouseId = this.props.match.params.id;
 
+    fetchWarehouseInfo() {
+        let warehouseId = this.props.match.params.id;
         axios
             .get(API_URL + "warehouses/" + warehouseId)
             .then(result => {
@@ -29,6 +28,23 @@ class WarehouseDetails extends Component {
             .catch(err => {
                 console.log(err);
             })
+    }
+
+    deleteInventoryItem = (id) => {
+        console.log(id);
+    
+        axios
+            .delete(API_URL + "inventory/" + id)
+            .then(result => {
+                this.fetchWarehouseInfo();
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+    
+    componentDidMount() {
+        this.fetchWarehouseInfo();
     }
 
     render() {
@@ -64,7 +80,7 @@ class WarehouseDetails extends Component {
 
                 {this.state.warehouseInfo.inventory.length !== 0 &&
                     <div className="warehouseDetails__item">
-                        <InventoryList inventoryList={this.state.warehouseInfo.inventory} />
+                        <InventoryList inventoryList={this.state.warehouseInfo.inventory} deleteInventoryItem={this.deleteInventoryItem} />
                     </div>
                 }
 
