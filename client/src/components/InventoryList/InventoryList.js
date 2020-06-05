@@ -13,6 +13,7 @@ const InventoryList = (props) => {
     return (
       <InventoryItem
         key={item.id}
+        id={item.id}
         name={item.name}
         description={item.description}
         quantity={item.quantity}
@@ -24,6 +25,7 @@ const InventoryList = (props) => {
         warehouseId={item.warehouseId}
         first={first}
         id={item.id}
+        deleteInventoryItem={props.deleteInventoryItem}
       />
     );
   });
