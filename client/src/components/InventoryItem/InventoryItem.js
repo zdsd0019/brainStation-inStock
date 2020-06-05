@@ -1,6 +1,8 @@
 import React from "react";
 import "./InventoryItem.scss";
 import remove from "../../assets/Icons/SVG/Icon-kebab-default.svg";
+import { Link } from 'react-router-dom';
+import inventoryId from '../InventoryDetails/InventoryDetails';
 
 const InventoryItem = (props) => {
   const {
@@ -52,10 +54,12 @@ const InventoryItem = (props) => {
           />
         </div>
         <div>
+          <Link to={'/inventory/' + inventoryId}>
           <p className="inventory__product-name">{name}</p>
           <p className="inventory__paragraph inventory__paragraph--description">
             {description}
-          </p>
+            </p>
+          </Link>
         </div>
       </div>
 
