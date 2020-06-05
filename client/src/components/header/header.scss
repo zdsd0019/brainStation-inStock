@@ -1,131 +1,107 @@
 @import '../../styles/partials/mixins';
 
 .header {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 1rem;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	padding-bottom: 1rem;
 
-    &-container {
-        background-color: $black;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 1rem;
+	&-container {
+		background-color: $black;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 1rem;
 
-        @include tablet {
-            height: 5rem;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            padding-left: 1.5rem;
-        }
+		@include tablet {
+			height: 5rem;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			padding-left: 1.5rem;
+		}
 
-        @include laptop {
-            padding-left: 11.25rem;
-        }
-    }
+		@include laptop {
+			padding-left: 11.25rem;
+		}
+	}
 
-    &-logo {
-        background-size: cover;
-        background-color: $black;
-    }
+	&-logo {
+		background-size: cover;
+		background-color: $black;
+	}
 }
 
 .btn {
-    display: flex;
+	display: flex;
 
-    &-inventory {
-        width: 50%;
-        margin: 0;
-        background-color: $black;
-        text-align: center;
-        color: $white;
-        border: none;
-        outline: none;
-        padding-bottom: 1rem;
-        text-decoration: none; 
+	&-inventory {
+		width: 50%;
+		margin: 0;
+		background-color: $black;
+		text-align: center;
+		color: $white;
+		border: none;
+		outline: none;
+		padding-bottom: 1rem;
+		text-decoration: none;
 
-        &:hover {
-            border: none;
-            border-bottom: 0.25rem solid $white;
-            
-        }
+		&:hover {
+			border: none;
+			border-bottom: 0.25rem solid $white;
+		}
 
-        &:focus {
-            border: none;
-            border-bottom: 0.25rem solid $white;
-            
-        }
+		&:focus {
+			border: none;
+			border-bottom: 0.25rem solid $white;
+		}
 
-        &:active{
-            border: none;
-            border-bottom: 0.25rem solid $white;
-            
-        }
+		&:active {
+			border: none;
+			border-bottom: 0.25rem solid $white;
+		}
 
-        @include tablet {
-            margin-left: 2rem;
-            padding-bottom: 2rem;
-            padding-top: 1.57rem;
-        }
+		@include tablet {
+			margin-left: 2rem;
+		}
 
-        @include laptop {
-            margin-left: 3.5rem;
-            padding-bottom: 2rem;
-            padding-top: 1.57rem;
-        }
-    }
+		@include laptop {
+			margin-left: 3.5rem;
+		}
+	}
 
-    &-locations {
-        margin: 0;
-        width: 50%;
-        background-color: $black;
-        text-align: center;
-        color: $white;
-        border: none;
-        outline: none;
-        padding-bottom: 1rem;
-        text-decoration: none; 
+	&-locations {
+		margin: 0;
+		width: 50%;
+		background-color: $black;
+		text-align: center;
+		color: $white;
+		border: none;
+		outline: none;
+		padding-bottom: 1rem;
+		text-decoration: none;
 
-        &:hover {
-            border: none;
-            border-bottom: 0.25rem solid $white;
-            
-        }
+		&:hover {
+			border: none;
+			border-bottom: 0.25rem solid $white;
+		}
 
-        &:focus {
-            border: none;
-            border-bottom: 0.25rem solid $white;
-            
-        }
+		&:focus {
+			border: none;
+			border-bottom: 0.25rem solid $white;
+		}
 
-        &:active{
-            border: none;
-            border-bottom: 0.25rem solid $white;
-            
-        }
+		&:active {
+			border: none;
+			border-bottom: 0.25rem solid $white;
+		}
 
-        @include tablet {
-            margin-left: 2rem;
-            padding-bottom: 2rem;
-            padding-top: 1.57rem;
-        }
+		@include tablet {
+			margin-left: 2rem;
+		}
 
-        @include laptop {
-            margin-left: 3.5rem;
-            padding-bottom: 2rem;
-            padding-top: 1.57rem;
-        }
-    }
-
-    // &-active{
-    //     color: $white;
-    //     padding-bottom: 0.6rem;    
-    //     width: 50%;            
-    //     border-bottom: 1px solid $white;
-    // }
+		@include laptop {
+			margin-left: 3.5rem;
+		}
+	}
 }
-
