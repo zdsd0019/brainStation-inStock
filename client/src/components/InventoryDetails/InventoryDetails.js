@@ -36,8 +36,7 @@ class InventoryDetails extends Component {
 	render() {
 		return (
 			<section className="item">
-
-                <div className='tablet-align'>
+				<div className="tablet-align">
 					<div className="item-head">
 						<div>
 							<Link to="/inventory" className="">
@@ -48,68 +47,51 @@ class InventoryDetails extends Component {
 							<h1 className="item-name">{this.state.inventory.name}</h1>
 						</div>
 					</div>
-                    <div ref={(status) => (this.status = status)} className="status">
-							{this.state.inventory.isInstock ? 'In stock' : 'Out of stock'}
+					<div ref={(status) => (this.status = status)} className="status">
+						{this.state.inventory.isInstock ? 'In stock' : 'Out of stock'}
+					</div>
+				</div>
+				<div className="tablet-container">
+					<div className="tablet-description">
+						<h1 className="item-description-header">ITEM DESCRIPTION</h1>
+						<p className="item-description">{this.state.inventory.description}</p>
+					</div>
+					<div>
+						<div className="tablet-container laptop-container">
+							<div>
+								<h1 className="item-orderedby-header tablet-order">ORDERED BY</h1>
+								<p className="item-orderedby">Anna Mastoris</p>
+							</div>
+							<div>
+								<h1 className="item-reference-header">REFERENCE NUMBER</h1>
+								<p className="item-reference">{this.state.inventory.id}</p>
+							</div>
 						</div>
-
-
-                </div>
-                
-
-                <div className='tablet-container'>
-                        <div className='tablet-description'>
-                            <h1 className='item-description-header'>ITEM DESCRIPTION</h1>
-                            <p className='item-description'>{this.state.inventory.description}</p>
-                        </div>
- 
-
-                <div>
-
-
-                    <div className='tablet-container laptop-container'>
-                        <div>
-                            <h1 className='item-orderedby-header tablet-order'>ORDERED BY</h1>
-                            <p  className='item-orderedby'>Anna Mastoris</p>
-                        </div>
-                        <div>
-                            <h1 className='item-reference-header'>REFERENCE NUMBER</h1>
-                            <p className='item-reference'>{this.state.inventory.id}</p>
-                        </div>
-                    </div>
-                        
-                        
-                    <div className='tablet-container laptop-container'>   
-                        <div>
-                            <h1 className='item-lastordered-header tablet-lorder'>LAST ORDERED</h1>
-                            <p className='item-lastordered'>{this.state.inventory.lastOrdered}</p>
-                        </div>
-                        <div>
-                            <h1 className='item-location-header'>LOCATION</h1>
-                            <p className='item-location'>{this.state.inventory.city}, {this.state.inventory.country} </p>
-                        </div>
-                    </div>    
-                        
-                        
-                        
-                        
-                        
-                        <div>
-                            <h1 className='item-quantity-header'>QUANTITY</h1>
-                            <p className='item-quantity'>{this.state.inventory.quantity}</p>
-                        </div>
-                        <div>
-                            <h1 className='item-categories-header'>CATEGORIES</h1>
-                            <p className='item-categories'>{this.state.inventory.categories}</p>
-                        </div>
-                    </div>
-                </div>
-                    <div className='tablet-btn'>
-                    <button className='edit-button'>
-                            EDIT
-                        </button>
-                    </div>
-                        
-
+						<div className="tablet-container laptop-container">
+							<div>
+								<h1 className="item-lastordered-header tablet-lorder">LAST ORDERED</h1>
+								<p className="item-lastordered">{this.state.inventory.lastOrdered}</p>
+							</div>
+							<div>
+								<h1 className="item-location-header">LOCATION</h1>
+								<p className="item-location">
+									{this.state.inventory.city}, {this.state.inventory.country}{' '}
+								</p>
+							</div>
+						</div>
+						<div>
+							<h1 className="item-quantity-header">QUANTITY</h1>
+							<p className="item-quantity">{this.state.inventory.quantity}</p>
+						</div>
+						<div>
+							<h1 className="item-categories-header">CATEGORIES</h1>
+							<p className="item-categories">{this.state.inventory.categories}</p>
+						</div>
+					</div>
+				</div>
+				<div className="tablet-btn">
+					<button className="edit-button">EDIT</button>
+				</div>
 			</section>
 		);
 	}

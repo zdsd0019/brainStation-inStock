@@ -103,11 +103,11 @@
 
 	&-categories {
 		@include mobile-header4-paragraph;
-        font-size: 0.75rem;
-        
-        @include laptop {
-            padding-bottom: 2rem;
-        }
+		font-size: 0.75rem;
+
+		@include laptop {
+			padding-bottom: 2rem;
+		}
 	}
 }
 
@@ -141,12 +141,12 @@
 	width: 18rem;
 	height: 3rem;
 	font-weight: bold;
-    margin-top: 1.5rem;
-    
-    @include tablet {
-        width: 10rem;
-        height: 3rem;
-    }
+	margin-top: 1.5rem;
+
+	@include tablet {
+		width: 10rem;
+		height: 3rem;
+	}
 }
 
 @include tablet {
@@ -158,48 +158,46 @@
 		}
 
 		&-container {
-            display: flex;
-            padding-bottom: 2rem;
+			display: flex;
+			padding-bottom: 2rem;
 
-            @include laptop {
-                display: unset;
-            }
-        }
+			@include laptop {
+				display: unset;
+			}
+		}
 
-        &-order {
-            padding-right: 5rem;
+		&-order {
+			padding-right: 5rem;
 
-            @include laptop {
-                padding-right: 26rem;
-            }
-        }
+			@include laptop {
+				padding-right: 26rem;
+			}
+		}
 
-        &-lorder {
-            padding-right: 4.1rem;
+		&-lorder {
+			padding-right: 4.1rem;
 
-            @include laptop {
-                padding-right: 25rem;
-            }
-        }
+			@include laptop {
+				padding-right: 25rem;
+			}
+		}
 
-        &-description {
-            padding-right: 2rem;
-        }
+		&-description {
+			padding-right: 2rem;
+		}
 
-        &-btn {
-            display: flex;
-            flex-direction: row-reverse;
-            border-top: 1px solid $mercury;
-        }
-        
+		&-btn {
+			display: flex;
+			flex-direction: row-reverse;
+			border-top: 1px solid $mercury;
+		}
 	}
 }
 
 @include laptop {
-    .laptop{
-
-    &-container {
-        display: flex;
-    }
-}
+	.laptop {
+		&-container {
+			display: flex;
+		}
+	}
 }
