@@ -3,6 +3,7 @@ import "./InventoryItem.scss";
 import remove from "../../assets/Icons/SVG/Icon-kebab-default.svg";
 import { Link } from 'react-router-dom';
 import inventoryId from '../InventoryDetails/InventoryDetails';
+import DropdownButton from "../DropdownButton/DropdownButton";
 
 const InventoryItem = (props) => {
   const {
@@ -48,10 +49,7 @@ const InventoryItem = (props) => {
       >
         <div className="inventory__header3-container">
           <h3 className={headerClassName}>ITEM</h3>
-          <img
-            src={remove}
-            className="inventory__remove inventory__remove--mobile"
-          />
+          <DropdownButton removeButtonClassName={"inventory__remove inventory__remove--mobile"} />
         </div>
         <div>
           <Link to={'/inventory/' + inventoryId}>
@@ -84,10 +82,7 @@ const InventoryItem = (props) => {
       </div>
 
       <div className="inventory__tablet-button-container">
-        <img
-          src={remove}
-          className={removeButtonClassName + " inventory__remove--tablet"}
-        />
+        <DropdownButton removeButtonClassName={removeButtonClassName + " inventory__remove--tablet"} />
       </div>
     </div>
   );
