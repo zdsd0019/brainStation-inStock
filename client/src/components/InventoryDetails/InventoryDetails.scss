@@ -1,0 +1,203 @@
+@import "../../styles/partials/mixins";
+
+.item {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include tablet {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  &-container {
+    display: flex;
+  }
+
+  &-wrapper {
+    width: 100%;
+  }
+
+  &-head {
+    display: flex;
+    align-items: center;
+  }
+
+  &-name {
+    @include mobile-header1;
+  }
+
+  &-arrow {
+    padding-right: 1.5rem;
+  }
+
+  &-description-header {
+    @include mobile-header2-sub-header;
+    color: $mercury;
+    margin: 0;
+    padding-top: 2rem;
+  }
+  &-orderedby-header {
+    @include mobile-header2-sub-header;
+    color: $mercury;
+    margin: 0;
+  }
+
+  &-reference-header {
+    @include mobile-header2-sub-header;
+    color: $mercury;
+    margin: 0;
+  }
+
+  &-lastordered-header {
+    @include mobile-header2-sub-header;
+    color: $mercury;
+    margin: 0;
+  }
+
+  &-location-header {
+    @include mobile-header2-sub-header;
+    color: $mercury;
+    margin: 0;
+  }
+
+  &-quantity-header {
+    @include mobile-header2-sub-header;
+    color: $mercury;
+    margin: 0;
+  }
+
+  &-categories-header {
+    @include mobile-header2-sub-header;
+    color: $mercury;
+    margin: 0;
+  }
+
+  &-description {
+    @include mobile-header4-paragraph;
+    font-size: 0.75rem;
+  }
+  &-orderedby {
+    @include mobile-header4-paragraph;
+    font-size: 0.75rem;
+  }
+
+  &-reference {
+    @include mobile-header4-paragraph;
+    font-size: 0.75rem;
+  }
+
+  &-lastordered {
+    @include mobile-header4-paragraph;
+    font-size: 0.75rem;
+  }
+
+  &-location {
+    @include mobile-header4-paragraph;
+    font-size: 0.75rem;
+  }
+
+  &-quantity {
+    @include mobile-header4-paragraph;
+    font-size: 0.75rem;
+  }
+
+  &-categories {
+    @include mobile-header4-paragraph;
+    font-size: 0.75rem;
+
+    @include laptop {
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.status {
+  width: 5.5rem;
+  height: 1.5rem;
+  color: $white;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.5rem;
+  border-radius: 5px;
+  display: inline-block;
+
+  &-isinstock {
+    background-color: rgb(15, 180, 15);
+  }
+
+  &-isoutofstock {
+    background-color: $mercury;
+  }
+
+  @include tablet {
+    margin-left: 1.5rem;
+  }
+}
+
+.edit-button {
+  @include bluebutton;
+  background-color: $brainflix-blue-dark;
+  border-color: $brainflix-blue-dark;
+  width: 18rem;
+  height: 3rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+
+  @include tablet {
+    width: 10rem;
+    height: 3rem;
+  }
+}
+
+@include tablet {
+  .tablet {
+    &-align {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $mercury;
+    }
+
+    &-container {
+      display: flex;
+      padding-bottom: 2rem;
+
+      @include laptop {
+        display: unset;
+      }
+    }
+
+    &-order {
+      padding-right: 5rem;
+
+      @include laptop {
+        padding-right: 26rem;
+      }
+    }
+
+    &-lorder {
+      padding-right: 4.1rem;
+
+      @include laptop {
+        padding-right: 25rem;
+      }
+    }
+
+    &-description {
+      padding-right: 2rem;
+    }
+
+    &-btn {
+      display: flex;
+      flex-direction: row-reverse;
+      border-top: 1px solid $mercury;
+    }
+  }
+}
+
+@include laptop {
+  .laptop {
+    &-container {
+      display: flex;
+    }
+  }
+}

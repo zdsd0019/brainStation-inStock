@@ -2,6 +2,7 @@ import React from "react";
 import "./InventoryItem.scss";
 import remove from "../../assets/Icons/SVG/Icon-kebab-default.svg";
 import DropdownButton from "../DropdownButton/DropdownButton";
+import { Link } from "react-router-dom";
 
 const InventoryItem = (props) => {
   const {
@@ -15,6 +16,7 @@ const InventoryItem = (props) => {
     quantity,
     warehouseId,
     first,
+    id,
   } = props;
 
   let status = "";
@@ -37,50 +39,62 @@ const InventoryItem = (props) => {
     removeButtonClassName += " inventory__remove--first";
   }
 
+  console.log("props", props);
+
   return (
-    <div className="inventory__card">
-      <div
-        className={
-          descriptionContainerClassName +
-          " inventory__description-container--name"
-        }
-      >
-        <div className="inventory__header3-container">
-          <h3 className={headerClassName}>ITEM</h3>
-          <DropdownButton removeButtonClassName={"inventory__remove inventory__remove--mobile"} />
+    <Link to={`/inventory/${props.id}`} className="warehouseList__link">
+      <div className="inventory__card">
+        <div
+          className={
+            descriptionContainerClassName +
+            " inventory__description-container--name"
+          }
+        >
+          <div className="inventory__header3-container">
+            <h3 className={headerClassName}>ITEM</h3>
+            <DropdownButton
+              removeButtonClassName={
+                "inventory__remove inventory__remove--mobile"
+              }
+            />
+          </div>
+          <div>
+            <p className="inventory__product-name">{name}</p>
+            <p className="inventory__paragraph inventory__paragraph--description">
+              {description}
+            </p>
+          </div>
         </div>
-        <div>
-          <p className="inventory__product-name">{name}</p>
-          <p className="inventory__paragraph inventory__paragraph--description">
-            {description}
-          </p>
+
+        <div className={descriptionContainerClassName}>
+          <h3 className={headerClassName}>LAST ORDERED</h3>
+          <p className={descriptionClassName}>{lastOrdered}</p>
+        </div>
+
+        <div className={descriptionContainerClassName}>
+          <h3 className={headerClassName}>LOCATION</h3>
+          <p className={descriptionClassName}>{city}</p>
+        </div>
+
+        <div className={descriptionContainerClassName}>
+          <h3 className={headerClassName}>QUANTITY</h3>
+          <p className={descriptionClassName}>{quantity}</p>
+        </div>
+
+        <div className={descriptionContainerClassName}>
+          <h3 className={headerClassName}>STATUS</h3>
+          <p className={descriptionClassName}>{status}</p>
+        </div>
+
+        <div className="inventory__tablet-button-container">
+          <DropdownButton
+            removeButtonClassName={
+              removeButtonClassName + " inventory__remove--tablet"
+            }
+          />
         </div>
       </div>
-
-      <div className={descriptionContainerClassName}>
-        <h3 className={headerClassName}>LAST ORDERED</h3>
-        <p className={descriptionClassName}>{lastOrdered}</p>
-      </div>
-
-      <div className={descriptionContainerClassName}>
-        <h3 className={headerClassName}>LOCATION</h3>
-        <p className={descriptionClassName}>{city}</p>
-      </div>
-
-      <div className={descriptionContainerClassName}>
-        <h3 className={headerClassName}>QUANTITY</h3>
-        <p className={descriptionClassName}>{quantity}</p>
-      </div>
-
-      <div className={descriptionContainerClassName}>
-        <h3 className={headerClassName}>STATUS</h3>
-        <p className={descriptionClassName}>{status}</p>
-      </div>
-
-      <div className="inventory__tablet-button-container">
-        <DropdownButton removeButtonClassName={removeButtonClassName + " inventory__remove--tablet"} />
-      </div>
-    </div>
+    </Link>
   );
 };
 

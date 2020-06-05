@@ -23,6 +23,7 @@ const InventoryList = (props) => {
         categories={item.categories}
         warehouseId={item.warehouseId}
         first={first}
+        id={item.id}
       />
     );
   });
