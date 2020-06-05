@@ -1,0 +1,89 @@
+@import "../../styles/partials/colors";
+@import "../../styles/partials/mixins";
+
+.inventory {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $mercury;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__description-container {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      width: 110px;
+      &--first {
+        height: 130px;
+        justify-content: space-between;
+      }
+
+      &--name {
+        width: 210px;
+      }
+    }
+  }
+
+  &__header3-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__header3 {
+    color: $silver;
+    margin-bottom: 0px;
+
+    @include tablet {
+      display: none;
+      font-size: 14px;
+    }
+
+    &--first {
+      @include tablet {
+        display: inline;
+      }
+    }
+  }
+
+  &__status-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__remove {
+    &--first {
+      @include tablet {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__product-name {
+    font-family: "Avenir-Bold";
+    margin-bottom: 0px;
+  }
+
+  &__paragraph {
+    &--description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    @include tablet {
+      font-size: 14px;
+
+      &--first {
+        padding-bottom: 25px;
+      }
+    }
+  }
+}

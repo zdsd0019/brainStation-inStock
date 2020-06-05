@@ -1,0 +1,15 @@
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/fonts";
+
+.inventory {
+  &__list-container {
+    display: flex;
+    flex-direction: column;
+    // width: 288px;
+    // align-items: center;
+
+    @include tablet {
+      // margin: 20px 24px;
+    }
+  }
+}
