@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import inventoryId from '../InventoryDetails/InventoryDetails';
 import DropdownButton from "../DropdownButton/DropdownButton";
 
+const API_URL = `inventory/${inventoryId}`
+
 const InventoryItem = (props) => {
   const {
     categories,
@@ -40,6 +42,7 @@ const InventoryItem = (props) => {
   }
 
   return (
+    <Link to={`/inventory/${props.id}`} className="warehouseList__link">
     <div className="inventory__card">
       <div
         className={
@@ -52,12 +55,10 @@ const InventoryItem = (props) => {
           <DropdownButton removeButtonClassName={"inventory__remove inventory__remove--mobile"} />
         </div>
         <div>
-          <Link to={'/inventory/' + inventoryId}>
           <p className="inventory__product-name">{name}</p>
           <p className="inventory__paragraph inventory__paragraph--description">
             {description}
             </p>
-          </Link>
         </div>
       </div>
 
@@ -85,6 +86,7 @@ const InventoryItem = (props) => {
         <DropdownButton removeButtonClassName={removeButtonClassName + " inventory__remove--tablet"} />
       </div>
     </div>
+    </Link>
   );
 };
 
